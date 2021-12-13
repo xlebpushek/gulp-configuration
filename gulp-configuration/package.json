@@ -2,7 +2,34 @@
     "name": "gulp-configuration",
     "version": "1.0.0",
     "description": "Assembling a task manager for a full stack",
+    "keywords": [
+        "gulp",
+        "html",
+        "scss",
+        "css",
+        "js"
+    ],
+    "homepage": "https://github.com/xlebpushek/gulp-configuration#readme",
+    "bugs": {
+        "url": "https://github.com/xlebpushek/gulp-configuration/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name":  "xlebpushek"
+    },
+    "funding": {
+        "type" : "individual",
+        "url" : "https://www.buymeacoffee.com/xlebpushek"
+    },
     "main": "gulpfile.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xlebpushek/gulp-configuration.git"
+    },
+    "scripts": {
+        "production": "gulp --production",
+        "development": "gulp --development"
+    },
     "dependencies": {
         "minimist": "latest",
         "ansi-colors": "latest",
@@ -15,28 +42,7 @@
         "gulp-rigger": "latest"
     },
     "devDependencies": {
-      "gulp-sourcemaps": "latest",
-      "browser-sync": "latest"
-    },
-    "scripts": {
-        "production": "gulp --production",
-        "development": "gulp --development"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/xlebpushek/gulp-configuration.git"
-    },
-    "keywords": [
-        "gulp",
-        "html",
-        "scss",
-        "css",
-        "js"
-    ],
-    "author": "xlebpushek",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/xlebpushek/gulp-configuration/issues"
-    },
-    "homepage": "https://github.com/xlebpushek/gulp-configuration#readme"
+        "gulp-sourcemaps": "latest",
+        "browser-sync": "latest"
+    }
 }
