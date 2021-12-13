@@ -1,6 +1,5 @@
 // ### Connecting modules
 // ## General
-const colors = require('ansi-colors')
 const argv = require("minimist")(process.argv.slice(2), {
   string: ["path"],
   boolean: ["production", "development"],
@@ -17,8 +16,9 @@ const argv = require("minimist")(process.argv.slice(2), {
     process.exit()
   },
 })
+const colors = require('ansi-colors')
 // ## Gulp
-// ## General
+// # General
 const { src, dest, watch, series, parallel } = require("gulp")
 const when = require("gulp-if")
 const sourcemaps = require("gulp-sourcemaps")
@@ -29,6 +29,7 @@ const fileinclude = require("gulp-file-include")
 const sass = require("gulp-sass")(require("sass"))
 // # scripts
 const rigger = require("gulp-rigger")
+// # server
 const browserSync = require("browser-sync").create()
 
 // ### Variables
