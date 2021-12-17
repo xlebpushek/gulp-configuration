@@ -15,11 +15,11 @@
     },
     "license": "MIT",
     "author": {
-        "name":  "xlebpushek"
+        "name": "xlebpushek"
     },
     "funding": {
-        "type" : "individual",
-        "url" : "https://www.buymeacoffee.com/xlebpushek"
+        "type": "individual",
+        "url": "https://www.buymeacoffee.com/xlebpushek"
     },
     "main": "gulpfile.js",
     "repository": {
@@ -31,18 +31,20 @@
         "development": "gulp --development"
     },
     "dependencies": {
-        "minimist": "latest",
-        "ansi-colors": "latest",
+        "colors": "^1.4.0",
         "gulp": "latest",
-        "gulp-if": "latest",
         "gulp-concat": "latest",
         "gulp-file-include": "latest",
+        "gulp-htmlmin": "^5.0.1",
+        "gulp-if": "latest",
+        "gulp-rigger": "latest",
         "gulp-sass": "latest",
-        "sass": "latest",
-        "gulp-rigger": "latest"
+        "minimist": "latest",
+        "sass": "latest"
     },
     "devDependencies": {
-        "gulp-sourcemaps": "latest",
-        "browser-sync": "latest"
+        "browser-sync": "latest",
+        "gulp-preprocess": "^4.0.2",
+        "gulp-sourcemaps": "latest"
     }
 }
