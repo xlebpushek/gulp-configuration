@@ -1,4 +1,5 @@
 const fs = require( "fs" )
+const del = require( "del" )
 const path = require( "path" )
 const colors = require( "colors" )
 const argv = require( "minimist" )( process.argv.slice(2), {
@@ -30,15 +31,15 @@ const {
 } = require( "gulp" )
 
 const when = require( "gulp-if" )
+const concatenation = require( "gulp-concat" )
 const sourcemaps = require( "gulp-sourcemaps" )
 const preprocess = require( "gulp-preprocess" )
-const concatenation = require( "gulp-concat" )
 
-const pages_file_include = require( "gulp-file-include" )
 const pages_minifier = require( "gulp-htmlmin" )
+const pages_file_include = require( "gulp-file-include" )
 
-const styles_sass = require( "gulp-sass" )( require("sass") )
 const scripts_rigger = require( "gulp-rigger" )
+const styles_sass = require( "gulp-sass" )( require("sass") )
 
 const browserSync = require( "browser-sync" ).create()
 
@@ -53,32 +54,45 @@ const source = path.join(
   root,
   ".source"
 )
+const build = path.join(
+  root,
+  ".build"
+)
 
 const directories = {
   source: {
-    pages: source + "/pages/**/index.html",
-    styles: source + "/styles/*.scss",
-    scripts: source + "/scripts/*.js",
-    json: source + "/json/*.json",
-    fonts: source + "/assets/fonts/*.*",
-    audio: source + "/assets/media/audio/*.*",
-    images: source + "/assets/media/images/*.*",
-    video: source + "/assets/media/video/*.*"
+    pages: source + "/pages/libraries/**/index.html",
+    styles: source + "/styles/**/*.scss",
+    scripts: source + "/scripts/**/*.js",
+    json: source + "/json/**/*.json",
+    fonts: source + "/assets/fonts/**/*.*",
+    icons: source + "/assets/media/icons/**/*.ico",
+    audio: source + "/assets/media/audio/**/*.*",
+    video: source + "/assets/media/video/**/*.*",
+    images: source + "/assets/media/images/**/*.*"
   },
   build: {
-    pages: root + "/",
-    styles: root + "/styles/",
-    scripts: root + "/scripts/",
-    json: root + "/json/",
-    fonts: root + "/assets/fonts/",
-    audio: root + "/assets/media/audio/",
-    images: root + "/assets/media/images/",
-    video: root + "/assets/media/video/"
+    pages: build,
+    styles: build + "/styles",
+    scripts: build + "/scripts",
+    json: build + "/json",
+    icons: build + "/assets/media/icons",
+    audio: build + "/assets/media/audio",
+    video: build + "/assets/media/video",
+    images: build + "/assets/media/images"
   }
 }
 
 
+function clean(path) {
+  return del.sync( path, {force: true} )
+}
+
 function pages() {
+  clean(path.join(
+    directories.build.pages,
+    "/**/index.html"
+  ))
   return src( directories.source.pages )
     .pipe(when(
       argv.production,
@@ -120,6 +134,7 @@ function pages() {
 }
 
 function styles() {
+  clean( directories.build.styles )
   return src( directories.source.styles )
     .pipe(when(
       argv.production,
@@ -140,6 +155,7 @@ function styles() {
 }
 
 function scripts() {
+  clean( directories.build.scripts )
   return src( directories.source.scripts )
     .pipe(when(
       argv.production,
@@ -159,10 +175,70 @@ function scripts() {
     ))
 }
 
+function json() {
+  clean( directories.build.json )
+  return src( directories.source.json )
+    .pipe(dest(
+      directories.build.json
+    ))
+    .pipe(when(
+      argv.development,
+      browserSync.stream()
+    ))
+}
+
+function icons() {
+  clean( directories.build.icons )
+  return src( directories.source.icons )
+    .pipe(dest(
+      directories.build.icons
+    ))
+    .pipe(when(
+      argv.development,
+      browserSync.stream()
+    ))
+}
+
+function audio() {
+  clean(directories.build.audio)
+  return src( directories.source.audio )
+    .pipe(dest(
+      directories.build.audio
+    ))
+    .pipe(when(
+      argv.development,
+      browserSync.stream()
+    ))
+}
+
+function video() {
+  clean( directories.build.video )
+  return src( directories.source.video )
+    .pipe(dest(
+      directories.build.video
+    ))
+    .pipe(when(
+      argv.development,
+      browserSync.stream()
+    ))
+}
+
+function images() {
+  clean( directories.build.images )
+  return src( directories.source.images )
+    .pipe(dest(
+      directories.build.images
+    ))
+    .pipe(when(
+      argv.development,
+      browserSync.stream()
+    ))
+}
+
 function server() {
   browserSync.init({
     server: {
-      baseDir: root,
+      baseDir: build,
     },
     port: argv.port || settings.port || 4307,
     ui: {
@@ -176,10 +252,16 @@ function server() {
     watch( directories.source.pages, pages )
     watch( directories.source.styles, styles )
     watch( directories.source.scripts, scripts )
+    watch( directories.source.json, json )
+    watch( directories.source.icons, icons )
+    watch( directories.source.audio, audio )
+    watch( directories.source.video, video )
+    watch( directories.source.images, images )
+
 }
 
 function main() {
-  const production = parallel( pages, styles, scripts )
+  const production = parallel( pages, styles, scripts, json, icons, audio, video, images )
   const development = series( production, server )
 
   if ( !argv.production && !argv.development ) {
