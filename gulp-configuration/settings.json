@@ -1,6 +1,6 @@
 {
-    "root": "/home/xlebpushek/Projects/Personal/GitHub/xlebpushek.github.io",
-    "mode": "--development",
-    "port": 4307,
-    "uiport": 8080
+  "root": "/home/xlebpushek/Projects/Personal/GitHub/xlebpushek.github.io",
+  "mode": "--development",
+  "port": 4307,
+  "uiport": 8080
 }
