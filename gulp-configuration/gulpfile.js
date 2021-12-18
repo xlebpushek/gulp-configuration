@@ -1,4 +1,4 @@
-const fs = require( "fs" );
+const fs = require( "fs" )
 const path = require( "path" )
 const colors = require( "colors" )
 const argv = require( "minimist" )( process.argv.slice(2), {
@@ -35,7 +35,7 @@ const preprocess = require( "gulp-preprocess" )
 const concatenation = require( "gulp-concat" )
 
 const pages_file_include = require( "gulp-file-include" )
-const pages_minifier = require( "gulp-htmlmin" );
+const pages_minifier = require( "gulp-htmlmin" )
 
 const styles_sass = require( "gulp-sass" )( require("sass") )
 const scripts_rigger = require( "gulp-rigger" )
