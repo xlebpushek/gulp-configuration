@@ -1,5 +1,2 @@
 # Dependency directories
 /gulp-configuration/node_modules/
-
-# Source directories
-/gulp-configuration/.source/
