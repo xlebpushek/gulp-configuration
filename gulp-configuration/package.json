@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "browser-sync": "latest",
+    "del": "^6.0.0",
     "gulp-preprocess": "^4.0.2",
     "gulp-sourcemaps": "latest"
   }
