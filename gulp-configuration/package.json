@@ -1,15 +1,9 @@
 {
   "name": "gulp-configuration",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Task manager configuration for a pleasant layout",
   "keywords": [
-    "web",
-    "gulp",
-    "html",
-    "css",
-    "scss",
-    "sass",
-    "js"
+    ""
   ],
   "homepage": "https://github.com/xlebpushek/gulp-configuration#readme",
   "bugs": {
@@ -33,21 +27,26 @@
     "development": "gulp --development"
   },
   "dependencies": {
-    "colors": "^1.4.0",
+    "colors": "latest",
+    "gulp-clean": "latest",
     "gulp": "latest",
-    "gulp-concat": "latest",
+    "gulp-cssmin": "latest",
     "gulp-file-include": "latest",
-    "gulp-htmlmin": "^5.0.1",
+    "gulp-fonter": "latest",
+    "gulp-htmlmin": "latest",
     "gulp-if": "latest",
+    "gulp-jsmin": "latest",
+    "gulp-jsonmin": "latest",
+    "gulp-preprocess": "latest",
     "gulp-rigger": "latest",
     "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-ttf2woff": "latest",
+    "gulp-ttf2woff2": "latest",
     "minimist": "latest",
     "sass": "latest"
   },
   "devDependencies": {
-    "browser-sync": "latest",
-    "del": "^6.0.0",
-    "gulp-preprocess": "^4.0.2",
-    "gulp-sourcemaps": "latest"
+    "browser-sync": "latest"
   }
 }

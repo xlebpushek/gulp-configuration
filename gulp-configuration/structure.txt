@@ -1,0 +1,86 @@
+SOURCE
+├───json
+│       data.json
+│
+├───media
+│   ├───audio
+│   │       example.mp3
+│   │
+│   ├───images
+│   │   ├───raster
+│   │   │       example.gif
+│   │   │       example.jpeg
+│   │   │       example.png
+│   │   │       example.webp
+│   │   │
+│   │   └───vector
+│   │           example.svg
+│   │
+│   └───video
+│           example.mp4
+│           example.webm
+│
+├───pages
+│   │   index.html
+│   │
+│   ├───about
+│   │       index.html
+│   │
+│   └───projects
+│           index.html
+│
+├───scripts
+│   │   index.js
+│   │
+│   ├───components
+│   └───libraries
+└───styles
+    │   index.scss
+    │
+    ├───components
+    └───libraries
+
+
+
+
+
+BUILD
+│   index.html
+│
+├───about
+│       index.html
+│
+├───json
+│       data.json
+│
+├───media
+│   ├───audio
+│   │       example.mp3
+│   │
+│   ├───images
+│   │   ├───raster
+│   │   │       example.gif
+│   │   │       example.jpeg
+│   │   │       example.png
+│   │   │       example.webp
+│   │   │
+│   │   └───vector
+│   │           example.svg
+│   │
+│   └───video
+│           example.mp4
+│           example.webm
+│
+├───projects
+│       index.html
+│
+├───scripts
+│   │   index.js
+│   │
+│   ├───components
+│   └───libraries
+└───styles
+    │   index.scss
+    │
+    ├───components
+    └───libraries

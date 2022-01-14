@@ -1,2 +1,5 @@
-# Dependency directories
+# Directory with dependencies
 /gulp-configuration/node_modules/
+
+# Directory with experimental project sources
+/gulp-configuration/experimental/
