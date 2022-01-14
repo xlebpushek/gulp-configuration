@@ -3,3 +3,7 @@
 
 # Directory with experimental project sources
 /gulp-configuration/experimental/
+
+
+# Directory containing components for the utility for working with markdown files
+/.obsidian/
