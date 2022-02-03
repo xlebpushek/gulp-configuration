@@ -1,9 +1,8 @@
 # Directory with dependencies
-/gulp-configuration/node_modules/
+/node_modules/
 
 # Directory with experimental project sources
-/gulp-configuration/experimental/
-
+/.experimental/
 
 # Directory containing components for the utility for working with markdown files
 /.obsidian/

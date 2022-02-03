@@ -1,10 +1,15 @@
 {
   "name": "gulp-configuration",
-  "version": "3.0.0",
   "description": "Task manager configuration for a pleasant layout",
+  "version": "3.0.0",
   "keywords": [
-    ""
+    "gulp",
+    "gulp-configuration"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xlebpushek/gulp-configuration.git"
+  },
   "homepage": "https://github.com/xlebpushek/gulp-configuration#readme",
   "bugs": {
     "url": "https://github.com/xlebpushek/gulp-configuration/issues"
@@ -18,10 +23,6 @@
     "url": "https://www.buymeacoffee.com/xlebpushek"
   },
   "main": "gulpfile.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xlebpushek/gulp-configuration.git"
-  },
   "scripts": {
     "production": "gulp --production",
     "development": "gulp --development"

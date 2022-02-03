@@ -4,6 +4,7 @@ global.DIRECTORIES = require("./configuration/directories.js")
 
 const { parallel, series } = require("gulp")
 const cleaning = require("./tasks/cleaning.js")
+const media = require("./tasks/media.js")
 const pages = require("./tasks/pages.js")
 const fonts = require("./tasks/fonts.js")
 const styles = require("./tasks/styles.js")
@@ -13,7 +14,7 @@ const watcher = require("./tasks/watcher.js")
 const server = require("./tasks/server.js")
 
 
-const production = series(cleaning, parallel(pages, fonts, styles, json, scripts))
+const production = series(cleaning, parallel(media, pages, fonts, styles, json, scripts))
 const development = series(production, parallel(watcher, server))
 
 

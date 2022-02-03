@@ -10,7 +10,7 @@ module.exports = server = () => {
     ui: {
       port: 8080,
     },
-    logPrefix: "gulp-configuration",
+    notify: false,
     open: false,
     reloadOnRestart: true,
   })
